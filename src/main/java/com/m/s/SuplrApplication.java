@@ -12,6 +12,7 @@ public class SuplrApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SuplrApplication.class, args);
+
     }
 
 }
