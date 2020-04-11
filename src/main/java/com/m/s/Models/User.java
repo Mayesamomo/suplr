@@ -23,7 +23,7 @@ public class User {
     @GeneratedValue(strategy = IDENTITY)
     private Long userId;
     @NotBlank(message = "name is required")
-    private String username;
+    private String fullName;
     @NotBlank(message = "Password is required")
     private String password;
     @NotBlank(message = "passwordConfirmation is required")
