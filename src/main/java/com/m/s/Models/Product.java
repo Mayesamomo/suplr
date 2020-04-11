@@ -8,7 +8,11 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -21,21 +25,35 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Product {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Long producId;
+    private Long productId;
+
     @NotBlank(message = " Name cannot be empty or Null")
-    private String productName;
-    @NotBlank(message = "enter price.")
+    @Column(length = 50)
+    private String name;
+
+    @Column(nullable = false)
     private Double price;
+
+    @Column(nullable = false)
+    private int quantity;
+
     @Nullable
-    private String imageurl;
+    @Column(length = 150)
+    private String imageUrl;
+
     @Nullable
     @Lob
+    @Column(length = 100)
     private String description;
-    @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "providerId", referencedColumnName = "providerId")
-    private Provider provider;
+
+    @ManyToMany(fetch = LAZY)
+    private List<Provider> provider = new ArrayList<>();
+
+    @NotNull()
     private Instant createdDate;
+
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "categoryId", referencedColumnName = "categoryId")
     private Category category;
+
+
 }

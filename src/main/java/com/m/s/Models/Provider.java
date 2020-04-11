@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.FetchType.LAZY;
@@ -24,18 +26,31 @@ public class Provider {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long providerId;
+
     @NotBlank(message = "name is required")
-    private String providerName;
+    @Column(length = 50)
+    private String name;
+
     @Lob
-    @NotBlank(message = "Description is required")
+    @Column(length = 100)
     private String description;
+
     @Email
-    @NotEmpty(message = "Email is required")
+    @Column(length = 50)
     private String email;
-    @NotEmpty(message = "phone number is required")
-    private Long phone;
-    @OneToMany(fetch = LAZY)
-    private List<Product> products;
-    private Instant createdDate;
+
+    @Column(length = 9)
+    private int phone;
+
+    @Nullable
+    @Column(length = 150)
+    private String imageUrl;
+
+    @ManyToMany(fetch = LAZY,mappedBy = "provider")
+    private List<Product> product = new ArrayList<>();
+
+    @ManyToMany()
+    private List<User> user = new ArrayList<>();
+
 
 }
