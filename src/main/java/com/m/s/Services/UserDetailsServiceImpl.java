@@ -20,6 +20,10 @@ import static java.util.Collections.singletonList;
 @Service
 @AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
     /**
      * Locates the user based on the username. In the actual implementation, the search
      * may possibly be case sensitive, or case insensitive depending on how the
@@ -32,10 +36,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
      * @throws UsernameNotFoundException if the user could not be found or the user has no
      * GrantedAuthority
      */
-    @Autowired
-    private UserRepo userRepository;
+    //@Autowired
+    //private UserRepo userRepository;
 
-    @Override
+   /* @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String fullname) {
         Optional<User> userOptional = userRepository.findByFullName(fullname);
@@ -44,7 +48,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                         "Found with username : " + fullname));
 
         return new org.springframework.security
-                .core.userdetails.User(user.getFullName(), user.getPassword(),
+                .core.userdetails.User(user.getName(), user.getPassword(),
                 user.isEnabled(), true, true,
                 true, getAuthorities("USER"));
     }
@@ -52,4 +56,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private Collection<? extends GrantedAuthority> getAuthorities(String role) {
         return singletonList(new SimpleGrantedAuthority(role));
     }
+
+    */
+
 }

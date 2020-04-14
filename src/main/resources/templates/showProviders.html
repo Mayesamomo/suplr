@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" th:href="@{../../../../media/css/showProviders.css}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>List Providers</title>
+</head>
+<body>
+<!--<img th:src="@{../../../../media/add.png}" style="background-repeat: no-repeat !important; background-size: cover; height: 500px" alt="login img" class="img-fluid border border-success">-->
+
+    <div class="container text-center">
+        <div class="row justify-content-around">
+
+            <div  th:each="Provider : ${providerList}" class="col-4">
+
+                <div class="card-group my-3">
+                    <div class="card">
+                        <img class="card-img-top" th:src="@{../../../../media/user.png}" style="opacity: 0.2" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title text-capitalize" th:text="${Provider.name}"></h4>
+                            <p class="card-text" th:text="${Provider.email}"></p>
+                            <p class="card-text overflow-auto" th:text="${Provider.description}"></p>
+                            <p class="card-text badge badge-pill badge-info" th:text="${Provider.phone}"></p>
+                            <!--<p><a href="#"><span class="badge badge-pill badge-info" th:text="${Provider.phone}"></span></a></p><br>-->
+                        </div>
+                        <a href="categoryForm" class="btn btn-info">Add Categories</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+</html>
+<!--
+<div class="row ">
+            <div class="col">
+
+                <div class="card-group">
+
+                    <div class="card" style="width:400px">
+                        <img class="card-img-top"  alt="Provider image" style="width:100%; ">
+                        <div class="card-body">
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+-->

@@ -49,7 +49,7 @@ public class User {
     @NotNull()
     private Instant createdDate;
 
-    //private boolean enabled;
+    private boolean enabled;
 
     @ManyToMany(mappedBy = "user")
     private List<Provider> provider = new ArrayList<>();

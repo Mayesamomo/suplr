@@ -1,0 +1,33 @@
+.backg{
+    /**background-color: #D6DDEB;**/
+
+    background-image: url('../set.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+}
+
+.extraLeftMargin {
+    margin-left: 50px;
+}
+
+.jumbotronExtra {
+    background-color: rgba(255, 114, 4, 0.68) !important;
+}
+
+.imgStyle {
+    opacity: 0.8;
+}
+
+.extraPadding {
+    padding: 10px;
+}
+
+.extraMargin {
+    margin: 50px;
+}
+
+.extraTopMargin {
+    margin-top: 100px;
+}

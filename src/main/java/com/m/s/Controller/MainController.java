@@ -8,6 +8,8 @@ import com.m.s.Repository.ProductRepo;
 import com.m.s.Repository.ProviderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.Instant;
@@ -21,6 +23,12 @@ public class MainController {
     ProviderRepo providerRepo;
     @Autowired
     ProductRepo productRepo;
+
+    @GetMapping("/")
+    public String Login() {
+
+        return "Login";
+    }
 
 
     @PostMapping("addItem")
@@ -67,4 +75,6 @@ public class MainController {
 
         return "addItem.html";
     }
+
+
 }

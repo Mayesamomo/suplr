@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" th:href="@{../../../../media/css/login.css}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Add Category</title>
+</head>
+<!--<body background="../images/bg2.jpg" style="background-repeat: no-repeat !important; background-size: cover;">-->
+<body th:style="'background:url('+ @{../../../../media/gala.jpg} +'); background-repeat: no-repeat !important; background-size: cover;'" class="">
+<!--<img th:src="@{bg.jpg}" alt="">-->
+
+<!--<body class="backg">-->
+
+<div class="container extraTopMargin" >
+    <div class="row align-items-center justify-content-center">
+
+
+        <div class="border border-success col-4">
+
+            <h1 class="mb-5 text-center text-success">Add Category</h1>
+
+            <div class="align-middle text-center extraLeftMargin">
+
+                <form method="post" th:action="@{addCategory}" th:object="${category}">
+
+                    <div class="form-group ">
+                        <div class="col-10">
+
+                            <input required type="text"  autofocus placeholder="* Name" class="form-control " th:field="*{name}" />
+
+                        </div>
+                    </div>
+                    <div class="col-10 mb-5">
+
+                        <button type="submit" class="btn btn-block btn-dark text-center font-weight-bold">Add</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

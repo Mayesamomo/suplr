@@ -1,4 +1,4 @@
-package com.m.s.Config;
+/*package com.m.s.Config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -39,4 +39,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
+
+
 }
+
+ */

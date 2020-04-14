@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" th:href="@{../../../../media/css/login.css}" />
+    <!--<link rel="stylesheet" type="text/css" href="../static/css/login.css">-->
+    <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
+    <!--<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>-->
+    <!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
+    <!--<script type="text/javascript" th:src="@{js/main.js}" src="../static/js/main.js"></script>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Login</title>
+</head>
+<!--<body background="../images/bg2.jpg" style="background-repeat: no-repeat !important; background-size: cover;">-->
+<body th:style="'background:url('+ @{../../../../media/gala.jpg} +'); background-repeat: no-repeat !important; background-size: cover;'" class="">
+<!--<img th:src="@{bg.jpg}" alt="">-->
+
+<!--<body class="backg">-->
+<form>
+    <div class="container extraTopMargin" >
+        <div class="row align-items-center justify-content-center">
+
+
+            <div class="border border-success col-4">
+
+                    <h1 class="mb-5 text-center text-success">Login</h1>
+
+                    <div class="align-middle text-center extraLeftMargin">
+
+                        <div class="form-group ">
+                            <div class="col-10">
+
+                                <input required type="email" autofocus placeholder="Email address" class="form-control " id="email">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-10">
+
+                                <input required placeholder="Password" type="password" class="form-control" id="pass">
+
+                            </div>
+                        </div>
+                        <div class="col-10 mb-5">
+
+                            <!--<button type="" class="btn btn-block btn-dark text-center font-weight-bold">Login</button>-->
+
+                            <a th:href="@{providerMenu}" class="btn btn-block btn-dark text-center font-weight-bold">Login</a>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
+<!--<div class="col extraMargin">
+
+                <div class="imgStyle ">
+                    <img th:src="@{../../../../media/cloud.jpg}" alt="login img" class="rounded-circle loginSImg">
+
+                </div>
+
+            </div> -->
+
+<!--<div class="col-4">-->
+<!--<div th:style="'background:url('+ @{../../../../media/cloud.jpg} +'); background-repeat: no-repeat !important; background-size: cover; height: 600px; width: 650px; border-radius: 50%'" class="border border-danger" >-->
